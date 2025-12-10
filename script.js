@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     .then(data => {
 
-        const tableBody = document.getElementById('json-table');
-        //const tableBody = document.querySelector('#json-table tbody')
+        //const tableBody = document.getElementById('json-table');
+        const tableBody = document.querySelector('#json-table tbody')
 
         data.forEach(user => {
-            const row = document.createElement('tr');
+            /*const row = document.createElement('tr');
 
             row.innerHTML = `
                 <td>${user.id}</td>
@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${user.phone}</td>
             `;
 
-            tableBody.appendChild(row);
+            tableBody.appendChild(row);*/
 
-            //const row = tableBody.insertRow();
-            //row.insertCell().textContent = user.id;
-            //row.insertCell().textContent = user.username;
+            const row = tableBody.insertRow();
+            row.insertCell().textContent = user.id;
+            row.insertCell().textContent = user.username;
             //row.insertCell().textContent = user.name;
             //row.insertCell().textContent = user.email;
             //row.insertCell().textContent = user.company.name;
