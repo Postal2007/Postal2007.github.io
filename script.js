@@ -41,7 +41,7 @@
 let tableData
 fetch('data.json')
 
-.then(response => tableData
+.then(response => tableData)
 
 function buildTable() {
     let tableBody = document.getElementById("json-table").getElementsByTagName("tbody")[0];
