@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
 
             tableBody.appendChild(row);*/
-            if(project.id == 2){
+            if(project.Status == "Planned"){
                 const row = tableBody.insertRow();
                 row.insertCell().textContent = project.ProjectID;
                 row.insertCell().textContent = Project.Province;
