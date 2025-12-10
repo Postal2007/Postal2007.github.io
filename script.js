@@ -87,7 +87,7 @@ function filterTable() {
     }
 }
 
+.catch(error => console.error('Error fetching data:', error));
+
 // Call buildTable when the page loads
 window.onload = buildTable;
-
-.catch(error => console.error('Error fetching data:', error));
