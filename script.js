@@ -25,10 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if(project.Status == "Planned"){
                 const row = tableBody.insertRow();
                 row.insertCell().textContent = project.ProjectID;
+                row.insertCell().textContent = project.ProjectName;
                 row.insertCell().textContent = project.Province;
                 row.insertCell().textContent = project.City;
                 row.insertCell().textContent = project.Address;
-                row.insertCell().textContent = project.ProjectName;
                 row.insertCell().textContent = project.Budget;
                 row.insertCell().textContent = project.Contractor.Name;
                 row.insertCell().textContent = project.Status;
