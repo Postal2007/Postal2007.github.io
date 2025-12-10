@@ -9,8 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const tableBody = document.getElementById('json-table');
 
         data.forEach(user => {
-
-            const row = document.createElement('tr');
+            /*const row = document.createElement('tr');
 
             row.innerHTML = `
                 <td>${user.id}</td>
@@ -21,7 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${user.phone}</td>
             `;
 
-            tableBody.appendChild(row);
+            tableBody.appendChild(row);*/
+
+            const row = tableBody.insertRow();
+            row.insertCell().textContent = user.id;
 
         });
 
