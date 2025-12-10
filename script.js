@@ -43,7 +43,7 @@ fetch('data.json')
 
 .then(response => response.json())
 
-.then(data => tableData)
+tableData = .then(data => tableData)
 
 .catch(error => console.error('Error fetching data:', error));
 
