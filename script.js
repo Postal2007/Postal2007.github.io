@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if(project.Status == "Planned"){
                 const row = tableBody.insertRow();
                 row.insertCell().textContent = project.ProjectID;
-                row.insertCell().textContent = Project.Province;
-                row.insertCell().textContent = Project.City;
-                row.insertCell().textContent = Project.Address;
-                row.insertCell().textContent = Project.ProjectName;
-                row.insertCell().textContent = Project.Budget;
-                row.insertCell().textContent = Project.Contractor.Name;
-                row.insertCell().textContent = Project.Status;
+                row.insertCell().textContent = project.Province;
+                row.insertCell().textContent = project.City;
+                row.insertCell().textContent = project.Address;
+                row.insertCell().textContent = project.ProjectName;
+                row.insertCell().textContent = project.Budget;
+                row.insertCell().textContent = project.Contractor.Name;
+                row.insertCell().textContent = project.Status;
             }
         });
 
