@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     .then(data => {
 
-        const tableBody = document.getElementById('json-table');
+        //const tableBody = document.getElementById('json-table');
+        const tableBody = document.querySelector('#dataTable tbody')
 
         data.forEach(user => {
             /*const row = document.createElement('tr');
