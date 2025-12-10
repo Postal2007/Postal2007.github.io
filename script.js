@@ -43,6 +43,8 @@ fetch('data.json')
 
 .then(response => tableData)
 
+.catch(error => console.error('Error fetching data:', error));
+
 function buildTable() {
     let tableBody = document.getElementById("json-table").getElementsByTagName("tbody")[0];
     tableBody.innerHTML = ""; // Clear existing rows
@@ -87,7 +89,7 @@ function filterTable() {
     }
 }
 
-.catch(error => console.error('Error fetching data:', error));
+
 
 // Call buildTable when the page loads
 window.onload = buildTable;
