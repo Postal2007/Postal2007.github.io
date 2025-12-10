@@ -38,7 +38,7 @@
     .catch(error => console.error('Error fetching data:', error));
     
 })*/
-const data = [];
+let data = [];
 async function fetchData(){
     const response = await fetch('data.json');
     data = await response.json();
