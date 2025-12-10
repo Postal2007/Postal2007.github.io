@@ -1,4 +1,4 @@
-// Fetch data from a mock API
+// Fetch data from a mock API 
 
 fetch('https://jsonplaceholder.typicode.com/users')
 
