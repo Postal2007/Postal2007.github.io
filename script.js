@@ -38,10 +38,10 @@
     .catch(error => console.error('Error fetching data:', error));
     
 })*/
-
+const data;
 async function fetchData(){
     const response = await fetch('data.json');
-    const data = await response.json();
+    data = await response.json();
 }
 //.catch(error => console.error('Error fetching data:', error));
 
