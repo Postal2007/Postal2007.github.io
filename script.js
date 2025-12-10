@@ -38,19 +38,15 @@
     .catch(error => console.error('Error fetching data:', error));
     
 })*/
-let tableData
-fetch('data.json')
+const response = await fetch('data.json');
+const data = await response.json();
 
-.then(response => response.json())
-
-.then(tableData = data)
-
-.catch(error => console.error('Error fetching data:', error));
+//.catch(error => console.error('Error fetching data:', error));
 
 function buildTable() {
     let tableBody = document.getElementById("json-table").getElementsByTagName("tbody")[0];
     tableBody.innerHTML = ""; // Clear existing rows
-    tableData.forEach(user => {
+    data.forEach(user => {
         let row = tableBody.insertRow();
         row.insertCell().textContent = user.id;
         row.insertCell().textContent = user.username;
