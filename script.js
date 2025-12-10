@@ -1,5 +1,5 @@
 // Fetch data from a mock API 
-/*document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     fetch('data.json')
 
     .then(response => response.json())
@@ -9,7 +9,7 @@
         //const tableBody = document.getElementById('json-table');
         const tableBody = document.querySelector('#json-table tbody')
 
-        data.forEach(user => {
+        data.forEach(project => {
             /*const row = document.createElement('tr');
 
             row.innerHTML = `
@@ -21,15 +21,17 @@
                 <td>${user.phone}</td>
             `;
 
-            tableBody.appendChild(row);//END
-            if(user.id == 2){
+            tableBody.appendChild(row);*/
+            if(Project.id == 2){
                 const row = tableBody.insertRow();
-                row.insertCell().textContent = user.id;
-                row.insertCell().textContent = user.username;
-                row.insertCell().textContent = user.name;
-                row.insertCell().textContent = user.email;
-                row.insertCell().textContent = user.company.name;
-                row.insertCell().textContent = user.phone;
+                row.insertCell().textContent = project.ProjectID;
+                row.insertCell().textContent = Project.Province;
+                row.insertCell().textContent = Project.City;
+                row.insertCell().textContent = Project.Address;
+                row.insertCell().textContent = Project.ProjectName;
+                row.insertCell().textContent = Project.Budget;
+                row.insertCell().textContent = Project.Contractor.Name;
+                row.insertCell().textContent = Project.Status;
             }
         });
 
@@ -37,7 +39,17 @@
 
     .catch(error => console.error('Error fetching data:', error));
     
-})*/
+})
+
+
+
+
+
+
+
+
+
+/* Trying stuff to search
 let data = [];
 async function fetchData(){
     const response = await fetch('data.json');
@@ -93,4 +105,4 @@ function filterTable() {
 
 // Call buildTable when the page loads
 fetchData();
-window.onload = buildTable;
+window.onload = buildTable;*/
