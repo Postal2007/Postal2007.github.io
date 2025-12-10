@@ -41,7 +41,9 @@
 let tableData
 fetch('data.json')
 
-.then(response => tableData)
+.then(response => response.json())
+
+.then(data => tableData)
 
 .catch(error => console.error('Error fetching data:', error));
 
