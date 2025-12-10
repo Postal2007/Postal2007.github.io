@@ -38,9 +38,11 @@
     .catch(error => console.error('Error fetching data:', error));
     
 })*/
-const response = await fetch('data.json');
-const data = await response.json();
 
+async function fetchData(){
+    const response = await fetch('data.json');
+    const data = await response.json();
+}
 //.catch(error => console.error('Error fetching data:', error));
 
 function buildTable() {
@@ -90,4 +92,5 @@ function filterTable() {
 
 
 // Call buildTable when the page loads
+fetchData();
 window.onload = buildTable;
