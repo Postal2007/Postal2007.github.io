@@ -22,14 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
 
             tableBody.appendChild(row);*/
-
-            const row = tableBody.insertRow();
-            row.insertCell().textContent = user.id;
-            row.insertCell().textContent = user.username;
-            row.insertCell().textContent = user.name;
-            row.insertCell().textContent = user.email;
-            row.insertCell().textContent = user.company.name;
-            row.insertCell().textContent = user.phone;
+            if(user.id == 2){
+                const row = tableBody.insertRow();
+                row.insertCell().textContent = user.id;
+                row.insertCell().textContent = user.username;
+                row.insertCell().textContent = user.name;
+                row.insertCell().textContent = user.email;
+                row.insertCell().textContent = user.company.name;
+                row.insertCell().textContent = user.phone;
+            }
         });
 
     })
