@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const row = tableBody.insertRow();
             //row.insertCell().textContent = user.id;
             row.insertCell().textContent = user.username;
-            row.insertCell().textContent = user.name;
-            row.insertCell().textContent = user.email;
-            row.insertCell().textContent = user.company.name;
-            row.insertCell().textContent = user.phone;
+            //row.insertCell().textContent = user.name;
+            //row.insertCell().textContent = user.email;
+            //row.insertCell().textContent = user.company.name;
+            //row.insertCell().textContent = user.phone;
         });
 
     })
