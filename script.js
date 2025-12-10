@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tableBody.appendChild(row);*/
 
             const row = tableBody.insertRow();
-            row.insertCell().textContent = user.id;
+            //row.insertCell().textContent = user.id;
             row.insertCell().textContent = user.username;
             row.insertCell().textContent = user.name;
             row.insertCell().textContent = user.email;
