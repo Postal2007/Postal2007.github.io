@@ -1,5 +1,5 @@
 // Fetch data from a mock API 
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
     fetch('data.json')
 
     .then(response => response.json())
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${user.phone}</td>
             `;
 
-            tableBody.appendChild(row);*/
+            tableBody.appendChild(row);//END
             if(user.id == 2){
                 const row = tableBody.insertRow();
                 row.insertCell().textContent = user.id;
@@ -36,4 +36,58 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     .catch(error => console.error('Error fetching data:', error));
-})
+    
+})*/
+let tableData
+fetch('data.json')
+
+.then(response => tableData
+
+.catch(error => console.error('Error fetching data:', error));
+
+function buildTable() {
+    let tableBody = document.getElementById("json-table").getElementsByTagName("tbody")[0];
+    tableBody.innerHTML = ""; // Clear existing rows
+    tableData.forEach(user => {
+        let row = tableBody.insertRow();
+        row.insertCell().textContent = user.id;
+        row.insertCell().textContent = user.username;
+        row.insertCell().textContent = user.name;
+        row.insertCell().textContent = user.email;
+        row.insertCell().textContent = user.company.name;
+        row.insertCell().textContent = user.phone;
+    });
+}
+
+function filterTable() {
+    let input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("searchInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    for (i = 0; i < tr.length; i++) {
+        // Skip the header row
+        if (tr[i].parentNode.tagName === 'TBODY') {
+            let rowMatches = false;
+            td = tr[i].getElementsByTagName("td");
+            for (let j = 0; j < td.length; j++) {
+                if (td[j]) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        rowMatches = true;
+                        break;
+                    }
+                }
+            }
+            if (rowMatches) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+
+    // Call buildTable when the page loads
+    window.onload = buildTable;
