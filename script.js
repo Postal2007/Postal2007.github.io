@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     .catch(error => console.error('Error fetching data:', error));
     //XML
+    let xmlDoc;
     fetch('data.xml')
         .then(response => response.text())
         .then(xmlText => {
