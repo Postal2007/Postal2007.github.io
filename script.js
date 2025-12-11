@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     .catch(error => console.error('Error fetching data:', error));
     //XML
-    let xmlDoc = ""
     fetch('data.xml')
         .then(response => response.text())
         .then(xmlText => {
@@ -50,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }) 
     const xmlTableBody = document.querySelector('#xml-table tbody')
     let htmlContent = "<tr><th>Project ID</th><th>Project Name</th><th>Province</th><th>City</th><th>Address</th><th>Budget</th><th>Contractor Name</th><th>Status</th></tr>";
-    const projects = xmlDoc.getElementsByTagName("project")
+    const projects = xmlDoc.getElementsByTagName("project");
     for (let i = 0; i < projects.length; i++){
         const Status = projects[i].getElementsByTagName("status")[0].childNodes[0].nodeValue;
         if(Status == "In-Progress"){
