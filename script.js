@@ -55,7 +55,7 @@ function populateTable(xmlDoc){
     const xmlTableBody = document.querySelector('#xml-table tbody')
     let htmlContent = "<tr><th>Project ID</th><th>Project Name</th><th>Province</th><th>City</th><th>Address</th><th>Budget</th><th>Contractor Name</th><th>Status</th></tr>";
     const projectsFile = xmlDoc.getElementsByTagName("projects");
-    const projects = projectsFile.getElementsByTagName("project")
+    const projects = projectsFile[].getElementsByTagName("project")
     for (let i = 0; i < projects.length; i++){
         const Status = projects[i].getElementsByTagName("status")[0].childNodes[0].nodeValue;
         //if(Status == "In-Progress"){
@@ -67,7 +67,7 @@ function populateTable(xmlDoc){
             const Budget = projects[i].getElementsByTagName("maxBudget")[0].childNodes[0].nodeValue;
             const ContractorName = projects[i].getElementsByTagName("contractors")[0].childNodes[0].childNodes[0].getElementsByTagName("name")[0].childNodes[0].nodeValue;
 
-            htmlContent += "<tr><td>${ProjectID}</td><td>${ProjectName}</td><td>${Province}</td><td>${City}</td><td>${Address}</td><td>${Budget}</td><td>${ContractorName}</td></tr>";
+            htmlContent += '<tr><td>${ProjectID}</td><td>${ProjectName}</td><td>${Province}</td><td>${City}</td><td>${Address}</td><td>${Budget}</td><td>${ContractorName}</td></tr>';
         //}
     }
     // Insert the generated HTML string into the table element
