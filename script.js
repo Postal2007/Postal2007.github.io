@@ -57,7 +57,8 @@ function populateTable(xmlDoc){
     const projectsFile = xmlDoc.getElementsByTagName("projects");
     const projects = projectsFile[0].getElementsByTagName("project")
     for (let i = 0; i < projects.length; i++){
-        project = projectsFile[i];
+        var project = projectsFile[i];
+        
         var ProjectID = project.getElementsByTagName("projectID")[0].textContent;
         var ProjectName = project.getElementsByTagName("projectName")[0].textContent;
         var Province = project.getElementsByTagName("province")[0].textContent;
