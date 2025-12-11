@@ -58,32 +58,32 @@ function populateTable(xmlDoc){
     const projects = projectsFile[0].getElementsByTagName("project")
     for (let i = 0; i < projects.length; i++){
         const row = document.createElement("tr");
-
+        project = projects[i]
         
         //if(Status == "In-Progress"){
         const ProjectIdCell = document.createElement("td");
-            ProjectIdCell.textContent = cd.getElementsByTagName("projectID")[0].textContent;
+            ProjectIdCell.textContent = project.getElementsByTagName("projectID")[0].textContent;
             row.appendChild(ProjectIdCell);
         const ProjectNameCell = document.createElement("td");
-            ProjectNameCell.textContent = cd.getElementsByTagName("projectName")[0].textContent;
+            ProjectNameCell.textContent = project.getElementsByTagName("projectName")[0].textContent;
             row.appendChild(ProjectNameCell);
         const ProvinceCell = document.createElement("td");
-            ProvinceCell.textContent = cd.getElementsByTagName("province")[0].textContent;
+            ProvinceCell.textContent = project.getElementsByTagName("province")[0].textContent;
             row.appendChild(ProvinceCell);
         const CityCell = document.createElement("td");
-            CityCell.textContent = cd.getElementsByTagName("city")[0].textContent;
+            CityCell.textContent = project.getElementsByTagName("city")[0].textContent;
             row.appendChild(CityCell);
         const AddressCell = document.createElement("td");
-            AddressCell.textContent = cd.getElementsByTagName("address")[0].textContent;
+            AddressCell.textContent = project.getElementsByTagName("address")[0].textContent;
             row.appendChild(AddressCell);
         const BudgetCell = document.createElement("td");
-            BudgetCell.textContent = cd.getElementsByTagName("maxBudget")[0].textContent;
+            BudgetCell.textContent = project.getElementsByTagName("maxBudget")[0].textContent;
             row.appendChild(BudgetCell);
         const ContractorNameCell = document.createElement("td");
-            ContractorNameCell.textContent = cd.getElementsByTagName("contractorName")[0].textContent;
+            ContractorNameCell.textContent = project.getElementsByTagName("contractorName")[0].textContent;
             row.appendChild(ContractorNameCell);
         const StatusCell = document.createElement("td");
-            StatusCell.textContent = cd.getElementsByTagName("status")[0].textContent;
+            StatusCell.textContent = project.getElementsByTagName("status")[0].textContent;
             row.appendChild(StatusCell);
             
             tableBody.appendChild(row);
