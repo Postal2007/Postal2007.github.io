@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //XML
     let xmlDoc = ""
     fetch('data.xml')
-        .then(response => reponse.text())
+        .then(response => response.text())
         .then(xmlText => {
             const parser = new DOMParser()
             const xmlDoc = parser.parseFromString(xmlText, "text/xml")
