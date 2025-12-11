@@ -48,11 +48,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const xmlDoc = parser.parseFromString(xmlText, "text/xml")
             populateTable(xmlDoc)
         }) 
-    // Insert the generated HTML string into the table element
-    xmlTableBody.innerHTML = htmlContent;
+    
 })
 
-function populateTable(xmlDOc){
+function populateTable(xmlDoc){
     const xmlTableBody = document.querySelector('#xml-table tbody')
     let htmlContent = "<tr><th>Project ID</th><th>Project Name</th><th>Province</th><th>City</th><th>Address</th><th>Budget</th><th>Contractor Name</th><th>Status</th></tr>";
     const projects = xmlDoc.getElementsByTagName("project");
@@ -70,4 +69,6 @@ function populateTable(xmlDOc){
             htmlContent += "<tr><td>${ProjectID}</td><td>${ProjectName}</td><td>${Province}</td><td>${City}</td><td>${Address}</td><td>${Budget}</td><td>${ContractorName}</td></tr>";
         }
     }
+    // Insert the generated HTML string into the table element
+    xmlTableBody.innerHTML = htmlContent;
 }
