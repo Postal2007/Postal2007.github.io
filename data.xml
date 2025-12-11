@@ -14,13 +14,9 @@
 			</budgetAllocation>
 		</budget>
 		<status> In-Progress </status>
-		<contractors>
-			<contractor>
-				<name> UrbanCore Developments </name>
-				<city> Montreal </city>
-				<trade> Plumbing </trade>
-			</contractor>
-		</contractors>
+		<name> UrbanCore Developments </name>
+		<contractorCity> Montreal </contractorCity>
+		<contractorTrade> Plumbing </contractorTrade>
 	</project>
 	<project>
 		<projectID> 11 </projectID>
@@ -37,13 +33,9 @@
 			</budgetAllocation>
 		</budget>
 		<status> In-Progress </status>
-		<contractors>
-			<contractor>
-				<name> PrairieSky Engineering </name>
-				<city> Calgary </city>
-				<trade> Civil Engineering </trade>
-			</contractor>
-		</contractors>
+		<contractorName> PrairieSky Engineering </contractorName>
+		<contractorCity> Calgary </contractorCity>
+		<contractorTrade> Civil Engineering </contractorTrade>
 	</project>
 	<project>
 		<projectID> 4 </projectID>
@@ -60,13 +52,9 @@
 			</budgetAllocation>
 		</budget>
 		<status> In-Progress </status>
-		<contractors>
-			<contractor>
-				<name> PrairieSky Engineering </name>
-				<city> Calgary </city>
-				<trade> Civil Engineering </trade>
-			</contractor>
-		</contractors>
+		<contractorName> PrairieSky Engineering </contractorName>
+		<contractorCity> Calgary </contractorCity>
+		<contractorTrade> Civil Engineering </contractorTrade>
 	</project>
 	<project>
 		<projectID> 7 </projectID>
@@ -83,13 +71,9 @@
 			</budgetAllocation>
 		</budget>
 		<status> In-Progress </status>
-		<contractors>
-			<contractor>
-				<name> Lakeside Mechanical </name>
-				<city> Winnipeg </city>
-				<trade> HVAC </trade>
-			</contractor>
-		</contractors>
+		<contractorName> Lakeside Mechanical </contractorName>
+		<contractorCity> Winnipeg </contractorCity>
+		<contractorTrade> HVAC </contractorTrade>
 	</project>
 	<project>
 		<projectID> 15 </projectID>
@@ -106,13 +90,9 @@
 			</budgetAllocation>
 		</budget>
 		<status> In-Progress </status>
-		<contractors>
-			<contractor>
-				<name> Maple Ridge Construction </name>
-				<city> Toronto </city>
-				<trade> General Contractor </trade>
-			</contractor>
-		</contractors>
+		<contractorName> Maple Ridge Construction </contractorName>
+		<contractorCity> Toronto </contractorCity>
+		<contractorTrade> General Contractor </contractorTrade>
 	</project>
 	<project>
 		<projectID> 67 </projectID>
@@ -129,12 +109,8 @@
 			</budgetAllocation>
 		</budget>
 		<status> Planned </status>
-		<contractors>
-			<contractor>
-				<name> Maple Ridge Construction </name>
-				<city> Kingston </city>
-				<trade> Education </trade>
-			</contractor>
-		</contractors>
+		<contractorName> Maple Ridge Construction </contractorName>
+		<contractorCity> Kingston </contractorCity>
+		<contractorTrade> Education </contractorTrade>
 	</project>
 </projects>
