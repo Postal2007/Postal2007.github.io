@@ -41,8 +41,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     .catch(error => console.error('Error fetching data:', error));
     //XML
-    const parser = new DOMParser()
-    const xmlDoc = parser.parseFromString(xmlText, "text/xml")
+    let xmlDoc = ""
+    fetch('data.xml')
+        .then(response => reponse.text())
+        .then(xmlText => {
+            const parser = new DOMParser()
+            const xmlDoc = parser.parseFromString(xmlText, "text/xml")
+        }) 
     const xmlTableBody = document.querySelector('#xml-table tbody')
     let htmlContent = "<tr><th>Project ID</th><th>Project Name</th><th>Province</th><th>City</th><th>Address</th><th>Budget</th><th>Contractor Name</th><th>Status</th></tr>";
     const projects = xmlDoc.getElementsByTagName("project")
