@@ -41,16 +41,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     .catch(error => console.error('Error fetching data:', error));
     //XML
-    let xmlDoc;
     fetch('data.xml')
         .then(response => response.text())
         .then(xmlText => {
             const parser = new DOMParser()
-            xmlDoc = parser.parseFromString(xmlText, "text/xml")
-            console.log(xmlDoc)
+            const xmlDoc = parser.parseFromString(xmlText, "text/xml")
+            populateTable(xmlDoc)
         }) 
-    console.log("----------------------------------------")
-    console.log(xmlDoc)
+    // Insert the generated HTML string into the table element
+    xmlTableBody.innerHTML = htmlContent;
+})
+
+function populateTable(xmlDOc){
     const xmlTableBody = document.querySelector('#xml-table tbody')
     let htmlContent = "<tr><th>Project ID</th><th>Project Name</th><th>Province</th><th>City</th><th>Address</th><th>Budget</th><th>Contractor Name</th><th>Status</th></tr>";
     const projects = xmlDoc.getElementsByTagName("project");
@@ -68,7 +70,4 @@ document.addEventListener('DOMContentLoaded', () => {
             htmlContent += "<tr><td>${ProjectID}</td><td>${ProjectName}</td><td>${Province}</td><td>${City}</td><td>${Address}</td><td>${Budget}</td><td>${ContractorName}</td></tr>";
         }
     }
-    // Insert the generated HTML string into the table element
-    xmlTableBody.innerHTML = htmlContent;
-})
-
+}
