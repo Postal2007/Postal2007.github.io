@@ -65,7 +65,7 @@ function populateTable(xmlDoc){
         const City = projects[i].getElementsByTagName("city")[0].childNodes[0].nodeValue;
         const Address = projects[i].getElementsByTagName("address")[0].childNodes[0].nodeValue;
         const Budget = projects[i].getElementsByTagName("maxBudget")[0].childNodes[0].nodeValue;
-        const ContractorName = projects[i].getElementsByTagName("contractors")[0].childNodes[0].childNodes[0].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        const ContractorName = projects[i].getElementsByTagName("contractors")[0].childNodes[0].getElementsByTagName("name")[0].childNodes[0].nodeValue;
 
             htmlContent += '<tr><td>${ProjectID}</td><td>${ProjectName}</td><td>${Province}</td><td>${City}</td><td>${Address}</td><td>${Budget}</td><td>${ContractorName}</td></tr>';
         //}
