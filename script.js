@@ -57,17 +57,37 @@ function populateTable(xmlDoc){
     const projectsFile = xmlDoc.getElementsByTagName("projects");
     const projects = projectsFile[0].getElementsByTagName("project")
     for (let i = 0; i < projects.length; i++){
-        const Status = projects[i].getElementsByTagName("status")[0].childNodes[0].nodeValue;
-        //if(Status == "In-Progress"){
-        const ProjectID = projects[i].getElementsByTagName("projectID")[0].childNodes[0].nodeValue;
-        const ProjectName = projects[i].getElementsByTagName("projectName")[0].childNodes[0].nodeValue;
-        const Province = projects[i].getElementsByTagName("province")[0].childNodes[0].nodeValue;
-        const City = projects[i].getElementsByTagName("city")[0].childNodes[0].nodeValue;
-        const Address = projects[i].getElementsByTagName("address")[0].childNodes[0].nodeValue;
-        const Budget = projects[i].getElementsByTagName("maxBudget")[0].childNodes[0].nodeValue;
-        const ContractorName = projects[i].getElementsByTagName("contractorName")[0].childNodes[0].nodeValue;
+        const row = document.createElement("tr");
 
-            htmlContent += '<tr><td>${ProjectID}</td><td>${ProjectName}</td><td>${Province}</td><td>${City}</td><td>${Address}</td><td>${Budget}</td><td>${ContractorName}</td></tr>';
+        
+        //if(Status == "In-Progress"){
+        const ProjectIdCell = document.createElement("td");
+            ProjectIdCell.textContent = cd.getElementsByTagName("projectID")[0].textContent;
+            row.appendChild(ProjectIdCell);
+        const ProjectNameCell = document.createElement("td");
+            ProjectNameCell.textContent = cd.getElementsByTagName("projectName")[0].textContent;
+            row.appendChild(ProjectNameCell);
+        const ProvinceCell = document.createElement("td");
+            ProvinceCell.textContent = cd.getElementsByTagName("province")[0].textContent;
+            row.appendChild(ProvinceCell);
+        const CityCell = document.createElement("td");
+            CityCell.textContent = cd.getElementsByTagName("city")[0].textContent;
+            row.appendChild(CityCell);
+        const AddressCell = document.createElement("td");
+            AddressCell.textContent = cd.getElementsByTagName("address")[0].textContent;
+            row.appendChild(AddressCell);
+        const BudgetCell = document.createElement("td");
+            BudgetCell.textContent = cd.getElementsByTagName("maxBudget")[0].textContent;
+            row.appendChild(BudgetCell);
+        const ContractorNameCell = document.createElement("td");
+            ContractorNameCell.textContent = cd.getElementsByTagName("contractorName")[0].textContent;
+            row.appendChild(ContractorNameCell);
+        const StatusCell = document.createElement("td");
+            StatusCell.textContent = cd.getElementsByTagName("status")[0].textContent;
+            row.appendChild(StatusCell);
+            
+            tableBody.appendChild(row);
+            //htmlContent += '<tr><td>${ProjectID}</td><td>${ProjectName}</td><td>${Province}</td><td>${City}</td><td>${Address}</td><td>${Budget}</td><td>${ContractorName}</td></tr>';
         //}
     }
     // Insert the generated HTML string into the table element
