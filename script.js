@@ -59,7 +59,7 @@ function populateTable(xmlDoc){
     for (let i = 0; i < projects.length; i++){
         const Status = projects[i].getElementsByTagName("status")[0].childNodes[0].nodeValue;
         //if(Status == "In-Progress"){
-        const ProjectID = projects[i].getElementsByTagName("projectid")[0].childNodes[0].nodeValue;
+        const ProjectID = projects[i].getElementsByTagName("projectID")[0].childNodes[0].nodeValue;
         const ProjectName = projects[i].getElementsByTagName("projectName")[0].childNodes[0].nodeValue;
         const Province = projects[i].getElementsByTagName("province")[0].childNodes[0].nodeValue;
         const City = projects[i].getElementsByTagName("city")[0].childNodes[0].nodeValue;
