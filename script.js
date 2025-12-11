@@ -86,7 +86,7 @@ function populateTable(xmlDoc){
             StatusCell.textContent = project.getElementsByTagName("status")[0].textContent;
             row.appendChild(StatusCell);
             
-            tableBody.appendChild(row);
+            xmlTableBody.appendChild(row);
             //htmlContent += '<tr><td>${ProjectID}</td><td>${ProjectName}</td><td>${Province}</td><td>${City}</td><td>${Address}</td><td>${Budget}</td><td>${ContractorName}</td></tr>';
         //}
     }
