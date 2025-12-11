@@ -1,210 +1,140 @@
 <projects>
-	<province>
-		<ontario>
-			<london>
-				<project14>
-					<address>
-						900 Wellington Rd
-					</address>
-					<budget>
-						<maxbudget>
-							2700000
-						</maxbudget>
-						<budgetspent>
-							600000
-						</budgetspent>
-						<budgetallocation>
-							<materials>
-								1600000
-							</materials>
-							<labor>
-								700000
-							</labor>
-						</budgetallocation>
-					</budget>
-					<contractors>
-						<contractor>
-							<name>
-								UrbanCore Developments
-							</name>
-							<city>
-								Montreal
-							</city>
-							<trade>
-								Plumbing
-							</trade>
-						</contractor>
-					</contractors>
-				</project14>
-			</london>
-			<hamilton>
-				<project11>
-					<address>
-						400 Main St W
-					</address>
-					<budget>
-						<maxbudget>
-							7100000
-						</maxbudget>
-						<budgetspent>
-							5000000
-						</budgetspent>
-						<budgetallocation>
-							<materials>
-								4200000
-							</materials>
-							<labor>
-								2500000
-							</labor>
-						</budgetallocation>
-					</budget>
-					<contractors>
-						<contractor>
-							<name>
-								PrairieSky Engineering
-							</name>
-							<city>
-								Calgary
-							</city>
-							<trade>
-								Civil Engineering
-							</trade>
-						</contractor>
-					</contractors>
-				</project11>
-			</hamilton>
-			<toronto>
-				<project1>
-				
-				</project1>
-			</toronto>
-		</ontario>
-		<bc>
-		
-		</bc>
-		<quebec>
-		
-		<quebec>
-		<alberta>
-			<calgary>
-				<project4>
-					<address>
-						50 Macleod Trail SE
-					</address>
-					<budget>
-						<maxbudget>
-							2750000
-						</maxbudget>
-						<budgetspent>
-							900000
-						</budgetspent>
-						<budgetallocation>
-							<materials>
-								200000
-							</materials>
-							<labor>
-								700000
-							</labor>
-						</budgetallocation>
-					</budget>
-					<contractors>
-						<contractor>
-							<name>
-								PrairieSky Engineering
-							</name>
-							<city>
-								Calgary
-							</city>
-							<trade>
-								Civil Engineering
-							</trade>
-						</contractor>
-					</contractors>
-				</project4>
-			</calgary>
-			<edmonton>
-				<project7>
-					<address>
-						120 Jasper Ave
-					</address>
-					<budget>
-						<maxbudget>
-							5000000
-						</maxbudget>
-						<budgetspent>
-							4800000
-						</budgetspent>
-						<budgetallocation>
-							<materials>
-								2500000
-							</materials>
-							<labor>
-								2000000
-							</labor>
-						</budgetallocation>
-					</budget>
-					<contractors>
-						<contractor>
-							<name>
-								Lakeside Mechanical
-							</name>
-							<city>
-								Winnipeg
-							</city>
-							<trade>
-								HVAC
-							</trade>
-						</contractor>
-					</contractors>
-				</project7>
-			</edmonton>
-		</alberta>
-		<manitoba>
-		
-		</manitoba>
-		<novascotia>
-		
-		</novascotia>
-		<saskatchewan>
-		
-		</saskatchewan>
-		<newfoundland>
-			<St.Johns>
-				<project15>
-					<address>
-						52 Water St
-					</address>
-					<budget>
-						<maxbudget>
-							8000000
-						</maxbudget>
-						<budgetspent>
-							7800000
-						</budgetspent>
-						<budgetallocation>
-							<materials>
-								5000000
-							</materials>
-							<labor>
-								2000000
-							</labor>
-						</budgetallocation>
-					</budget>
-					<contractors>
-						<contractor>
-							<name>
-								Maple Ridge Construction
-							</name>
-							<city>
-								Toronto
-							</city>
-							<trade>
-								General Contractor
-							</trade>
-						</contractor>
-					</contractors>
-				</project15>
-			</St.Johns>
-		<newfoundland>
-	</province>
+	<project>
+		<projectID> 14 </projectID>
+		<projectName> Postal Plumbing </projectName>
+		<province> Ontario </province>
+		<city> London </city>
+		<address> 900 Wellington Rd </address>
+		<budget>
+			<maxBudget> 2700000 </maxBudget>
+			<budgetSpent> 600000 </budgetSpent>
+			<budgetAllocation>
+				<materials> 1600000 </materials>
+				<labor> 700000 </labor>
+			</budgetAllocation>
+		</budget>
+		<status> In-Progress </status>
+		<contractors>
+			<contractor>
+				<name> UrbanCore Developments </name>
+				<city> Montreal </city>
+				<trade> Plumbing </trade>
+			</contractor>
+		</contractors>
+	</project>
+	<project>
+		<projectID> 11 </projectID>
+		<projectName> PrairieSky Engineering Office </projectName>
+		<province> Ontario </province>
+		<city> Hamilton </city>
+		<address> 400 Main St W </address>
+		<budget>
+			<maxBudget> 7100000 </maxBudget>
+			<budgetSpent> 5000000 </budgetSpent>
+			<budgetAllocation>
+				<materials> 4200000 </materials>
+				<labor> 2500000 </labor>
+			</budgetAllocation>
+		</budget>
+		<status> In-Progress </status>
+		<contractors>
+			<contractor>
+				<name> PrairieSky Engineering </name>
+				<city> Calgary </city>
+				<trade> Civil Engineering </trade>
+			</contractor>
+		</contractors>
+	</project>
+	<project>
+		<projectID> 4 </projectID>
+		<projectName> Larry Bridge </projectName>
+		<province> Alberta </province>
+		<city> Calgary </city>
+		<address> 50 Macleod Trail SE </address>
+		<budget>
+			<maxBudget> 2750000 </maxBudget>
+			<budgetSpent> 900000 </budgetSpent>
+			<budgetAllocation>
+				<materials> 200000 </materials>
+				<labor> 700000 </labor>
+			</budgetAllocation>
+		</budget>
+		<status> In-Progress </status>
+		<contractors>
+			<contractor>
+				<name> PrairieSky Engineering </name>
+				<city> Calgary </city>
+				<trade> Civil Engineering </trade>
+			</contractor>
+		</contractors>
+	</project>
+	<project>
+		<projectID> 7 </projectID>
+		<projectName> John's Home Heating and Ventilation Warehouse </projectName>
+		<province> Alberta </province>
+		<city> Edmonton </city>
+		<address> 120 Jasper Ave </address>
+		<budget>
+			<maxBudget> 5000000 </maxBudget>
+			<budgetSpent> 4800000 </budgetSpent>
+			<budgetAllocation>
+				<materials> 2500000 </materials>
+				<labor> 2000000 </labor>
+			</budgetAllocation>
+		</budget>
+		<status> In-Progress </status>
+		<contractors>
+			<contractor>
+				<name> Lakeside Mechanical </name>
+				<city> Winnipeg </city>
+				<trade> HVAC </trade>
+			</contractor>
+		</contractors>
+	</project>
+	<project>
+		<projectID> 15 </projectID>
+		<projectName> Ryki Apartment Complex </projectName>
+		<province> Newfoundland &amp; Labrador </province>
+		<city> St. Johns </city>
+		<address> 52 Water St </address>
+		<budget>
+			<maxBudget> 8000000 </maxBudget>
+			<budgetSpent> 7800000 </budgetSpent>
+			<budgetAllocation>
+				<materials> 5000000 </materials>
+				<labor> 2000000 </labor>
+			</budgetAllocation>
+		</budget>
+		<status> In-Progress </status>
+		<contractors>
+			<contractor>
+				<name> Maple Ridge Construction </name>
+				<city> Toronto </city>
+				<trade> General Contractor </trade>
+			</contractor>
+		</contractors>
+	</project>
+	<project>
+		<projectID> 67 </projectID>
+		<projectName> Darwin Elementary School </projectName>
+		<province> Ontario </province>
+		<city> Kingston </city>
+		<address> 67 Watterson St </address>
+		<budget>
+			<maxBudget> 8000000 </maxBudget>
+			<budgetSpent> 7800000 </budgetSpent>
+			<budgetAllocation>
+				<materials> 5000000 </materials>
+				<labor> 2000000 </labor>
+			</budgetAllocation>
+		</budget>
+		<status> Planned </status>
+		<contractors>
+			<contractor>
+				<name> Maple Ridge Construction </name>
+				<city> Kingston </city>
+				<trade> Education </trade>
+			</contractor>
+		</contractors>
+	</project>
 </projects>

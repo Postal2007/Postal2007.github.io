@@ -1,5 +1,7 @@
 // Fetch data from a mock API 
+
 document.addEventListener('DOMContentLoaded', () => {
+    //JSON
     fetch('data.json')
 
     .then(response => response.json())
@@ -7,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
 
         //const tableBody = document.getElementById('json-table');
-        const tableBody = document.querySelector('#json-table tbody')
+        const JsonTableBody = document.querySelector('#json-table tbody')
 
         data.forEach(project => {
             /*const row = document.createElement('tr');
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             tableBody.appendChild(row);*/
             if(project.Status == "Planned"){
-                const row = tableBody.insertRow();
+                const row = JsonTableBody.insertRow();
                 row.insertCell().textContent = project.ProjectID;
                 row.insertCell().textContent = project.ProjectName;
                 row.insertCell().textContent = project.Province;
@@ -38,71 +40,27 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     .catch(error => console.error('Error fetching data:', error));
-    
-})
+    //XML
+    const parser = new DOMParser()
+    const xmlDoc = parser.parseFromString(xmlText, "text/xml")
+    const xmlTableBody = document.querySelector('#xml-table tbody')
+    let htmlContent = "<tr><th>Project ID</th><th>Project Name</th><th>Province</th><th>City</th><th>Address</th><th>Budget</th><th>Contractor Name</th><th>Status</th></tr>";
+    const projects = xmlDoc.getElementsByTagName("project")
+    for (let i = 0; i < projects.length; i++){
+        const Status = projects[i].getElementsByTagName("status")[0].childNodes[0].nodeValue;
+        if(Status == "In-Progress"){
+            const ProjectID = projects[i].getElementsByTagName("projectid")[0].childNodes[0].nodeValue;
+            const ProjectName = projects[i].getElementsByTagName("projectName")[0].childNodes[0].nodeValue;
+            const Province = projects[i].getElementsByTagName("province")[0].childNodes[0].nodeValue;
+            const City = projects[i].getElementsByTagName("city")[0].childNodes[0].nodeValue;
+            const Address = projects[i].getElementsByTagName("address")[0].childNodes[0].nodeValue;
+            const Budget = projects[i].getElementsByTagName("maxBudget")[0].childNodes[0].nodeValue;
+            const ContractorName = projects[i].getElementsByTagName("contractors")[0].childNodes[0].childNodes[0].getElementsByTagName("name")[0].childNodes[0].nodeValue;
 
-
-
-
-
-
-
-
-
-/* Trying stuff to search
-let data = [];
-async function fetchData(){
-    const response = await fetch('data.json');
-    data = await response.json();
-}
-//.catch(error => console.error('Error fetching data:', error));
-
-function buildTable() {
-    let tableBody = document.getElementById("json-table").getElementsByTagName("tbody")[0];
-    tableBody.innerHTML = ""; // Clear existing rows
-    data.forEach(user => {
-        let row = tableBody.insertRow();
-        row.insertCell().textContent = user.id;
-        row.insertCell().textContent = user.username;
-        row.insertCell().textContent = user.name;
-        row.insertCell().textContent = user.email;
-        row.insertCell().textContent = user.company.name;
-        row.insertCell().textContent = user.phone;
-    });
-}
-
-function filterTable() {
-    let input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("searchInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.getElementsByTagName("tr");
-
-    for (i = 0; i < tr.length; i++) {
-        // Skip the header row
-        if (tr[i].parentNode.tagName === 'TBODY') {
-            let rowMatches = false;
-            td = tr[i].getElementsByTagName("td");
-            for (let j = 0; j < td.length; j++) {
-                if (td[j]) {
-                    txtValue = td[j].textContent || td[j].innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        rowMatches = true;
-                        break;
-                    }
-                }
-            }
-            if (rowMatches) {
-                tr[i].style.display = "";
-            } else {
-                tr[i].style.display = "none";
-            }
+            htmlContent += "<tr><td>${ProjectID}</td><td>${ProjectName}</td><td>${Province}</td><td>${City}</td><td>${Address}</td><td>${Budget}</td><td>${ContractorName}</td></tr>";
         }
     }
-}
+    // Insert the generated HTML string into the table element
+    xmlTableBody.innerHTML = htmlContent;
+})
 
-
-
-// Call buildTable when the page loads
-fetchData();
-window.onload = buildTable;*/

@@ -1,10 +1,1 @@
 remote_theme: daattali/beautiful-jekyll
-
-author: Some Person
-
-navbar-links:
-  About Me: "aboutme"
-
-social-network-links:
-  email: "someone@example.com"
-  rss: true
