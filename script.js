@@ -58,16 +58,16 @@ function populateTable(xmlDoc){
     const projects = projectsFile[0].getElementsByTagName("project")
     for (let i = 0; i < projects.length; i++){
         project = projectsFile[i];
-        var ProjectID = projects.getElementsByTagName("projectID")[0].textContent;
-        var ProjectName = projects.getElementsByTagName("projectName")[0].textContent;
-        var Province = projects.getElementsByTagName("province")[0].textContent;
-        var City = projects.getElementsByTagName("city")[0].textContent;
-        var Address = projects.getElementsByTagName("address")[0].textContent;
-        var Budget = projects.getElementsByTagName("maxBudget")[0].textContent;
-        var ContractorName = projects.getElementsByTagName("contractorName")[0].textContent;
-        var Status = projects.getElementsByTagName("status")[0].textContent;
+        var ProjectID = project.getElementsByTagName("projectID")[0].textContent;
+        var ProjectName = project.getElementsByTagName("projectName")[0].textContent;
+        var Province = project.getElementsByTagName("province")[0].textContent;
+        var City = project.getElementsByTagName("city")[0].textContent;
+        var Address = project.getElementsByTagName("address")[0].textContent;
+        var Budget = project.getElementsByTagName("maxBudget")[0].textContent;
+        var ContractorName = project.getElementsByTagName("contractorName")[0].textContent;
+        var Status = project.getElementsByTagName("status")[0].textContent;
 
-        xmlTableBody.innerHTML +=
+        htmlContent +=
         "<tr>"
         "<td>" + ProjectID + "</td>" +
         "<td>" + ProjectName + "</td>" +
