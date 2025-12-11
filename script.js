@@ -57,7 +57,28 @@ function populateTable(xmlDoc){
     const projectsFile = xmlDoc.getElementsByTagName("projects");
     const projects = projectsFile[0].getElementsByTagName("project")
     for (let i = 0; i < projects.length; i++){
-        const row = document.createElement("tr");
+        var ProjectID = projects.getElementsByTagName("projectID")[0].textContent;
+        var ProjectName = projects.getElementsByTagName("projectName")[0].textContent;
+        var Province = projects.getElementsByTagName("province")[0].textContent;
+        var City = projects.getElementsByTagName("city")[0].textContent;
+        var Address = projects.getElementsByTagName("address")[0].textContent;
+        var Budget = projects.getElementsByTagName("maxBudget")[0].textContent;
+        var ContractorName = projects.getElementsByTagName("contractorName")[0].textContent;
+        var Status = projects.getElementsByTagName("status")[0].textContent;
+
+        xmlTableBody.innerHTML +=
+        "<tr>"
+        "<td>" + ProjectID + "</td>" +
+        "<td>" + ProjectName + "</td>" +
+        "<td>" + Province + "</td>" +
+        "<td>" + City + "</td>" +
+        "<td>" + Address + "</td>" +
+        "<td>" + Budget + "</td>" +
+        "<td>" + ContractorName + "</td>" +
+        "<td>" + Status + "</td>" +
+        "</tr>";
+
+        /*const row = document.createElement("tr");
         project = projects[i]
         
         //if(Status == "In-Progress"){
@@ -86,7 +107,7 @@ function populateTable(xmlDoc){
             StatusCell.textContent = project.getElementsByTagName("status")[0].childNodes[0].nodeValue;
             row.appendChild(StatusCell);
             
-            xmlTableBody.appendChild(row);
+            xmlTableBody.appendChild(row);*/
             //htmlContent += '<tr><td>${ProjectID}</td><td>${ProjectName}</td><td>${Province}</td><td>${City}</td><td>${Address}</td><td>${Budget}</td><td>${ContractorName}</td></tr>';
         //}
     }
