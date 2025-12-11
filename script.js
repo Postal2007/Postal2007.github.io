@@ -53,66 +53,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function populateTable(xmlDoc){
     const xmlTableBody = document.querySelector('#xml-table tbody')
-    let htmlContent = "<tr><th>Project ID</th><th>Project Name</th><th>Province</th><th>City</th><th>Address</th><th>Budget</th><th>Contractor Name</th><th>Status</th></tr>";
-    const projectsFile = xmlDoc.getElementsByTagName("projects");
-    const projects = projectsFile[0].getElementsByTagName("project")
+
+    let htmlContent = `
+        <tr>
+            <th>Project ID</th>
+            <th>Project Name</th>
+            <th>Province</th>
+            <th>City</th>
+            <th>Address</th>
+            <th>Budget</th>
+            <th>Contractor Name</th>
+            <th>Status</th>
+        </tr>
+    `;
+
+    const projects = xmlDoc.getElementsByTagName("project");
+
     for (let i = 0; i < projects.length; i++){
-        var project = projectsFile[i];
-        
-        var ProjectID = project.getElementsByTagName("projectID")[0].textContent;
-        var ProjectName = project.getElementsByTagName("projectName")[0].textContent;
-        var Province = project.getElementsByTagName("province")[0].textContent;
-        var City = project.getElementsByTagName("city")[0].textContent;
-        var Address = project.getElementsByTagName("address")[0].textContent;
-        var Budget = project.getElementsByTagName("maxBudget")[0].textContent;
-        var ContractorName = project.getElementsByTagName("contractorName")[0].textContent;
-        var Status = project.getElementsByTagName("status")[0].textContent;
+        const project = projects[i];
 
-        htmlContent +=
-        "<tr>"
-        "<td>" + ProjectID + "</td>" +
-        "<td>" + ProjectName + "</td>" +
-        "<td>" + Province + "</td>" +
-        "<td>" + City + "</td>" +
-        "<td>" + Address + "</td>" +
-        "<td>" + Budget + "</td>" +
-        "<td>" + ContractorName + "</td>" +
-        "<td>" + Status + "</td>" +
-        "</tr>";
+        const ProjectID = project.getElementsByTagName("projectID")[0].textContent;
+        const ProjectName = project.getElementsByTagName("projectName")[0].textContent;
+        const Province = project.getElementsByTagName("province")[0].textContent;
+        const City = project.getElementsByTagName("city")[0].textContent;
+        const Address = project.getElementsByTagName("address")[0].textContent;
+        const Budget = project.getElementsByTagName("maxBudget")[0].textContent;
+        const ContractorName = project.getElementsByTagName("contractorName")[0].textContent;
+        const Status = project.getElementsByTagName("status")[0].textContent;
 
-        /*const row = document.createElement("tr");
-        project = projects[i]
-        
-        //if(Status == "In-Progress"){
-        const ProjectIdCell = document.createElement("td");
-            ProjectIdCell.textContent = project.getElementsByTagName("projectID")[0].childNodes[0].nodeValue;
-            row.appendChild(ProjectIdCell);
-        const ProjectNameCell = document.createElement("td");
-            ProjectNameCell.textContent = project.getElementsByTagName("projectName")[0].childNodes[0].nodeValue;
-            row.appendChild(ProjectNameCell);
-        const ProvinceCell = document.createElement("td");
-            ProvinceCell.textContent = project.getElementsByTagName("province")[0].childNodes[0].nodeValue;
-            row.appendChild(ProvinceCell);
-        const CityCell = document.createElement("td");
-            CityCell.textContent = project.getElementsByTagName("city")[0].childNodes[0].nodeValue;
-            row.appendChild(CityCell);
-        const AddressCell = document.createElement("td");
-            AddressCell.textContent = project.getElementsByTagName("address")[0].childNodes[0].nodeValue;
-            row.appendChild(AddressCell);
-        const BudgetCell = document.createElement("td");
-            BudgetCell.textContent = project.getElementsByTagName("maxBudget")[0].childNodes[0].nodeValue;
-            row.appendChild(BudgetCell);
-        const ContractorNameCell = document.createElement("td");
-            ContractorNameCell.textContent = project.getElementsByTagName("contractorName")[0].childNodes[0].nodeValue;
-            row.appendChild(ContractorNameCell);
-        const StatusCell = document.createElement("td");
-            StatusCell.textContent = project.getElementsByTagName("status")[0].childNodes[0].nodeValue;
-            row.appendChild(StatusCell);
-            
-            xmlTableBody.appendChild(row);*/
-            //htmlContent += '<tr><td>${ProjectID}</td><td>${ProjectName}</td><td>${Province}</td><td>${City}</td><td>${Address}</td><td>${Budget}</td><td>${ContractorName}</td></tr>';
-        //}
+        htmlContent += `
+            <tr>
+                <td>${ProjectID}</td>
+                <td>${ProjectName}</td>
+                <td>${Province}</td>
+                <td>${City}</td>
+                <td>${Address}</td>
+                <td>${Budget}</td>
+                <td>${ContractorName}</td>
+                <td>${Status}</td>
+            </tr>
+        `;
     }
-    // Insert the generated HTML string into the table element
+
     xmlTableBody.innerHTML = htmlContent;
 }
