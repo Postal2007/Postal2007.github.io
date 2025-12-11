@@ -47,7 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(xmlText => {
             const parser = new DOMParser()
             xmlDoc = parser.parseFromString(xmlText, "text/xml")
+            console.log(xmlDoc)
         }) 
+    console.log("----------------------------------------")
+    console.log(xmlDoc)
     const xmlTableBody = document.querySelector('#xml-table tbody')
     let htmlContent = "<tr><th>Project ID</th><th>Project Name</th><th>Province</th><th>City</th><th>Address</th><th>Budget</th><th>Contractor Name</th><th>Status</th></tr>";
     const projects = xmlDoc.getElementsByTagName("project");
