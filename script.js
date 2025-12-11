@@ -57,7 +57,7 @@ function populateTable(xmlDoc){
     const projects = xmlDoc.getElementsByTagName("project");
     for (let i = 0; i < projects.length; i++){
         const Status = projects[i].getElementsByTagName("status")[0].childNodes[0].nodeValue;
-        if(Status == "In-Progress"){
+        //if(Status == "In-Progress"){
             const ProjectID = projects[i].getElementsByTagName("projectid")[0].childNodes[0].nodeValue;
             const ProjectName = projects[i].getElementsByTagName("projectName")[0].childNodes[0].nodeValue;
             const Province = projects[i].getElementsByTagName("province")[0].childNodes[0].nodeValue;
@@ -67,7 +67,7 @@ function populateTable(xmlDoc){
             const ContractorName = projects[i].getElementsByTagName("contractors")[0].childNodes[0].childNodes[0].getElementsByTagName("name")[0].childNodes[0].nodeValue;
 
             htmlContent += "<tr><td>${ProjectID}</td><td>${ProjectName}</td><td>${Province}</td><td>${City}</td><td>${Address}</td><td>${Budget}</td><td>${ContractorName}</td></tr>";
-        }
+        //}
     }
     // Insert the generated HTML string into the table element
     xmlTableBody.innerHTML = htmlContent;
